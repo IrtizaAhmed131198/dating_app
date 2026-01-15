@@ -17,7 +17,7 @@ import ChatPage from "@/pages/ChatPage";
 import ProfilePage from "@/pages/ProfilePage";
 import AnalyticsPage from "@/pages/AnalyticsPage";
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const BACKEND_URL = "https://dashboard-main-production.up.railway.app/";
 export const API = `${BACKEND_URL}/api`;
 
 // Axios interceptor for error handling
