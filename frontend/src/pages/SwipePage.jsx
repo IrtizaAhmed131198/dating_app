@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import { API } from '@/App';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
+import { API } from '../App';
+import { Button } from '../components/ui/button';
+import { Card, CardContent } from '../components/ui/card';
+import { Badge } from '../components/ui/badge';
 import { toast } from 'sonner';
 import { Heart, X, Zap, MapPin, Info } from 'lucide-react';
-import AppLayout from '@/components/AppLayout';
+import AppLayout from '../components/AppLayout';
 
 const SwipePage = () => {
   const [matches, setMatches] = useState([]);

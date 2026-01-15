@@ -1,21 +1,21 @@
 import { useEffect } from "react";
-import "@/App.css";
+import "../App.css";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { AuthProvider, useAuth } from "@/context/AuthContext";
-import { Toaster } from "@/components/ui/sonner";
+import { AuthProvider, useAuth } from "../context/AuthContext";
+import { Toaster } from "../components/ui/sonner";
 import axios from "axios";
 
 // Pages
-import LandingPage from "@/pages/LandingPage";
-import Dashboard from "@/pages/Dashboard";
-import Login from "@/pages/Login";
-import Signup from "@/pages/Signup";
-import CreateProfile from "@/pages/CreateProfile";
-import SwipePage from "@/pages/SwipePage";
-import MatchesPage from "@/pages/MatchesPage";
-import ChatPage from "@/pages/ChatPage";
-import ProfilePage from "@/pages/ProfilePage";
-import AnalyticsPage from "@/pages/AnalyticsPage";
+import LandingPage from "../pages/LandingPage";
+import Dashboard from "../pages/Dashboard";
+import Login from "../pages/Login";
+import Signup from "../pages/Signup";
+import CreateProfile from "../pages/CreateProfile";
+import SwipePage from "../pages/SwipePage";
+import MatchesPage from "../pages/MatchesPage";
+import ChatPage from "../pages/ChatPage";
+import ProfilePage from "../pages/ProfilePage";
+import AnalyticsPage from "../pages/AnalyticsPage";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 export const API = `${BACKEND_URL}/api`;

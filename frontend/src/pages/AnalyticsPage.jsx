@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { API } from '@/App';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Progress } from '@/components/ui/progress';
-import { Badge } from '@/components/ui/badge';
+import { API } from '../App';
+import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
+import { Progress } from '../components/ui/progress';
+import { Badge } from '../components/ui/badge';
 import { toast } from 'sonner';
 import { TrendingUp, Eye, Heart, Users, Target, Zap } from 'lucide-react';
-import AppLayout from '@/components/AppLayout';
+import AppLayout from '../components/AppLayout';
 
 const AnalyticsPage = () => {
   const [stats, setStats] = useState(null);
