@@ -19,11 +19,24 @@ const ChatPage = () => {
   const messagesEndRef = useRef(null);
 
   useEffect(() => {
-    fetchMessages();
-    // Poll for new messages every 3 seconds
-    const interval = setInterval(fetchMessages, 3000);
-    return () => clearInterval(interval);
-  }, [matchId]);
+  const fetchMessages = async () => {
+    try {
+      const response = await axios.get(`${API}/messages/${matchId}`);
+      setMessages(response.data);
+    } catch (error) {
+      if (loading) {
+        toast.error('Failed to load messages');
+      }
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  fetchMessages(); // initial fetch
+  const interval = setInterval(fetchMessages, 3000); // polling
+  return () => clearInterval(interval);
+}, [matchId]); // now ESLint is happy
+
 
   useEffect(() => {
     scrollToBottom();
