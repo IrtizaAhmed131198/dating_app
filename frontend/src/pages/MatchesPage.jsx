@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import { API } from '../App';
-import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
-import { Button } from '../components/ui/button';
-import { Badge } from '../components/ui/badge';
+import { API } from '@/App';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
 import { toast } from 'sonner';
 import { MessageCircle, Heart, Sparkles } from 'lucide-react';
-import AppLayout from '../components/AppLayout';
+import AppLayout from '@/components/AppLayout';
 
 const MatchesPage = () => {
   const [matches, setMatches] = useState([]);
