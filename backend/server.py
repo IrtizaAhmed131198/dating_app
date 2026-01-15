@@ -37,36 +37,6 @@ api_router = APIRouter(prefix="/api")
 
 # ==================== MODELS ====================
 
-# class UserSignup(BaseModel):
-#     email: EmailStr
-#     password: str
-#     full_name: str
-#     gender: str
-#     date_of_birth: str
-
-# class UserLogin(BaseModel):
-#     email: EmailStr
-#     password: str
-
-# class Token(BaseModel):
-#     access_token: str
-#     token_type: str
-#     user_id: str
-#     email: str
-
-# class User(BaseModel):
-#     model_config = ConfigDict(extra="ignore")
-
-#     id: str = Field(default_factory=lambda: str(uuid.uuid4()))
-#     email: EmailStr
-#     password_hash: str
-#     full_name: str
-#     gender: str
-#     date_of_birth: str
-#     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
-#     is_active: bool = True
-#     has_profile: bool = False
-
 # Waitlist Models (Phase 1 & 2)
 class WaitlistUser(BaseModel):
     model_config = ConfigDict(extra="ignore")
