@@ -18,6 +18,7 @@ import ProfilePage from "@/pages/ProfilePage";
 import AnalyticsPage from "@/pages/AnalyticsPage";
 
 const BACKEND_URL = "https://dashboard-main-production.up.railway.app/";
+console.log("Backend URL:", BACKEND_URL);
 export const API = `${BACKEND_URL}/api`;
 
 // Axios interceptor for error handling
