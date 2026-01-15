@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { API } from '@/App';
@@ -18,25 +18,23 @@ const ChatPage = () => {
   const [loading, setLoading] = useState(true);
   const messagesEndRef = useRef(null);
 
-  useEffect(() => {
-  const fetchMessages = async () => {
+  const fetchMessages = useCallback(async () => {
     try {
       const response = await axios.get(`${API}/messages/${matchId}`);
       setMessages(response.data);
     } catch (error) {
-      if (loading) {
-        toast.error('Failed to load messages');
-      }
+      if (loading) toast.error('Failed to load messages');
     } finally {
       setLoading(false);
     }
-  };
+  }, [matchId]); // now it's memoized
 
-  fetchMessages(); // initial fetch
-  const interval = setInterval(fetchMessages, 3000); // polling
-  return () => clearInterval(interval);
-}, [matchId]); // now ESLint is happy
-
+  useEffect(() => {
+    fetchMessages();
+    // Poll for new messages every 3 seconds
+    const interval = setInterval(fetchMessages, 3000);
+    return () => clearInterval(interval);
+  }, [matchId]);
 
   useEffect(() => {
     scrollToBottom();
@@ -44,19 +42,6 @@ const ChatPage = () => {
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  const fetchMessages = async () => {
-    try {
-      const response = await axios.get(`${API}/messages/${matchId}`);
-      setMessages(response.data);
-    } catch (error) {
-      if (loading) {
-        toast.error('Failed to load messages');
-      }
-    } finally {
-      setLoading(false);
-    }
   };
 
   const sendMessage = async (e) => {

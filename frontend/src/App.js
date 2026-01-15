@@ -18,7 +18,7 @@ import ProfilePage from "@/pages/ProfilePage";
 import AnalyticsPage from "@/pages/AnalyticsPage";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-export const API = 'https://dashboard-main-production.up.railway.app/api';
+export const API = `${BACKEND_URL}/api`;
 
 // Axios interceptor for error handling
 axios.interceptors.response.use(
