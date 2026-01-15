@@ -9,7 +9,7 @@ let enableHealthCheck = true;
 
 // Environment variable overrides
 const config = {
-  enableHealthCheck: enableHealthCheck === "true",
+  enableHealthCheck: process.env.ENABLE_HEALTH_CHECK === "true",
   enableVisualEdits: isDevServer, // Only enable during dev server
 };
 
